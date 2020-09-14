@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'csshome/home.css' %}">
+</head>
+<body>    
+<h1>Pushkar's Portfolio</h1>
+<br>
+<a href = "{% static 'portfolio/Resume.pdf'   %}">Resume</a>
+<a href = "{% url 'blog:all_blogs'%}">Blogs</a>
+<a href= "https://www.linkedin.com/in/pushkar-tiwari-201851095/">Linkedin</a>
+<br>
+    <img src= "{% static 'portfolio/push.JPG'%}" height="50%" width="60%">
+
+
+{% for p in projects %}
+<h2>{{p.title}}</h2>
+
+<img src = "{{p.image.url}}"  height="30%" width="40%" >
+{{p.disription}}
+<br>
+{{p.date}}
+
+<br>
+{% endfor %}
+</body>
+</html>
