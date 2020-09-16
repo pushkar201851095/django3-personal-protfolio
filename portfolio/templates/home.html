@@ -9,24 +9,32 @@
     <link rel="stylesheet" type="text/css" href="{% static 'csshome/home.css' %}">
 </head>
 <body>    
-<h1>Pushkar's Portfolio</h1>
-<br>
+<section id="navbar">
 <a href = "{% static 'portfolio/Resume.pdf'   %}">Resume</a>
 <a href = "{% url 'blog:all_blogs'%}">Blogs</a>
 <a href= "https://www.linkedin.com/in/pushkar-tiwari-201851095/">Linkedin</a>
+<h1 id="name" >Pushkar Tiwari</h1>  
+</section>
 <br>
-    <img src= "{% static 'portfolio/push.JPG'%}" height="50%" width="60%">
+<br>
 
-
+<div>
+    <img src= "{% static 'portfolio/push.JPG'%}" height="30%" width="25%">
+</div>
+<h1 id="Portfolio">Portfolio</h1>
+<section id="projects">
 {% for p in projects %}
-<h2>{{p.title}}</h2>
-
+<b id="Pimage">
 <img src = "{{p.image.url}}"  height="30%" width="40%" >
+</b>
+<h2 id="projectname">{{p.title}}</h2>
 {{p.disription}}
 <br>
 {{p.date}}
-
+<br>
+<br>
 <br>
 {% endfor %}
+</section>
 </body>
 </html>
